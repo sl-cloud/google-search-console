@@ -1,10 +1,28 @@
 {
+	"name": "CooderSteve/google-search-console",
+    "description": "Great OAuth2 client for ZF2. It provides clients for github, google, facebook and linkedin, others are coming soon.",
+    "minimum-stability": "dev",
+    "type" : "module",
+    "homepage" : "https://github.com/CooderSteve/google-search-console",
+    "keywords" : ["oauth2", "google-search-console"],
+    "license" : "MIT",
+    "authors": [
+        {
+            "name": "Keshav Mishra",
+            "email": "keshav.kr.mishra@gmail.com",
+            "homepage": "http://www.keshavmishra.com"
+        }
+    ],
+    "require": {
+		"php": ">=5.3.3",
+        "zendframework/zendframework": "2.*"
+    },
 	"autoload" : {
 		"psr-4" : {
 			"CooderSteve\\" : "src/"
 		}
 	},
-	"require": {
-		"rakibtg/sleekdb": "^2.13"
+	"require" : {
+		"rakibtg/sleekdb" : "^2.13"
 	}
 }

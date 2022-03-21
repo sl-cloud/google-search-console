@@ -6,16 +6,15 @@
 namespace CooderSteve\Classes;
 
 use CooderSteve\Interfaces\DBConnectionInterface;
+use CooderSteve\Classes\AbstractDBConnection;
 use SleekDB\Store;
 
-class SleekDbConnection implements DBConnectionInterface
+class SleekDbConnection extends AbstractDBConnection implements DBConnectionInterface
 {
 
     protected $dataDirectory;
 
     protected $dataStorage;
-
-    protected $useTable;
 
     public function __construct()
     {
@@ -26,8 +25,8 @@ class SleekDbConnection implements DBConnectionInterface
     public function connect(): self
     {
         $this->dataStorage = new \SleekDB\Store($this->useTable, $this->dataDirectory);
-        
-        //We will insert some data just to make sure the database is working correctly
+
+        // We will insert some data just to make sure the database is working correctly
         $data = [
             "_id" => 1,
             "name" => "data_directory",
@@ -47,13 +46,14 @@ class SleekDbConnection implements DBConnectionInterface
     {
         return $this;
     }
-    
+
     public function where($whereArray): self
     {
         return $this;
     }
-    
-    public function query(string $query) : self{
+
+    public function query(string $query): self
+    {
         return $this;
     }
 }

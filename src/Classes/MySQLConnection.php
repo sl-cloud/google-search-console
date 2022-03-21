@@ -5,14 +5,9 @@ use CooderSteve\Interfaces\DBConnectionInterface;
 
 class MySQLConnection implements DBConnectionInterface
 {
-
+    
     public function connect(): self
     {
-        return $this;
-    }
-    public function fromTable(string $table): self
-    {
-        $this->useTable = $table;
         return $this;
     }
     

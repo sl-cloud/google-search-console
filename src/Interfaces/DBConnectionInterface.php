@@ -3,7 +3,7 @@ namespace CooderSteve\Interfaces;
 
 interface DBConnectionInterface
 {
-
+    
     public function connect(): self;
 
     public function select(array $fields): self;
