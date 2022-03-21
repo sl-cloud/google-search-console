@@ -26,6 +26,8 @@ class SleekDbConnection implements DBConnectionInterface
     public function connect(): self
     {
         $this->dataStorage = new \SleekDB\Store($this->useTable, $this->dataDirectory);
+        
+        //We will insert some data just to make sure the database is working correctly
         $data = [
             "_id" => 1,
             "name" => "data_directory",
@@ -38,6 +40,7 @@ class SleekDbConnection implements DBConnectionInterface
     public function fromTable(string $table): self
     {
         $this->useTable = $table;
+        return $this;
     }
 
     public function select(array $fields): self
