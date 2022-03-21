@@ -15,14 +15,15 @@ class DBFactory
                 self::_setDb(new MySQLConnection());
                 break;
             default:
-                self::_setDb( new SleekDbConnection());
+                self::_setDb(new SleekDbConnection());
                 break;
         }
     }
-    
-    protected static function _setDb(DBConnectionInterface $Db): DBConnectionInterface {
+
+    protected static function _setDb(DBConnectionInterface $Db): DBConnectionInterface
+    {
         self::$Db = $Db;
-        
+
         echo "Db Connection Successful.";
         return self::$Db->connect();
     }

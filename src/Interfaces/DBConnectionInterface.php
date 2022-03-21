@@ -8,13 +8,9 @@ interface DBConnectionInterface
 
     public function select(array $fields): self;
 
-    public function table(string $table): self;
+    public function setTable(string $table): self;
 
-    public function where($whereArray): self;
-
-    public function insert(array $data): bool;
-
-    public function update(array $data, int $id): bool;
-
-    public function delete(int $id): bool;
+    public function where(array $whereArray): self;
+    
+    public function query(string $query) : self;
 }

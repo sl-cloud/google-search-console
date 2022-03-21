@@ -5,7 +5,7 @@
  * Google Search Console using Oauth
  *
  * @author Steve Lee
- * @version 0.0.1
+ * @version 0.0.2
  */
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ini_set("error_log", __DIR__ . "/php-error.log");

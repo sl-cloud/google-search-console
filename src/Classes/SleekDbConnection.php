@@ -35,33 +35,22 @@ class SleekDbConnection implements DBConnectionInterface
         return $this;
     }
 
-    public function table(string $table): self
+    public function setTable(string $table): self
     {
         $this->useTable = $table;
-    }
-
-    public function insert(array $data): bool
-    {
-        $results = $this->dataStorage->insert($data);
     }
 
     public function select(array $fields): self
     {
         return $this;
     }
-
+    
     public function where($whereArray): self
     {
         return $this;
     }
-
-    public function update(array $data, int $id): bool
-    {
-        $this->dataStorage->updateById($id, $data);
-    }
-
-    public function delete(int $id): bool
-    {
-        return $this->dataStorage->deleteById($id);
+    
+    public function query(string $query) : self{
+        return $this;
     }
 }
