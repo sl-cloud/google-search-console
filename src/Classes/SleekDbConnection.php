@@ -35,7 +35,7 @@ class SleekDbConnection implements DBConnectionInterface
         return $this;
     }
 
-    public function setTable(string $table): self
+    public function fromTable(string $table): self
     {
         $this->useTable = $table;
     }

@@ -8,7 +8,7 @@ interface DBConnectionInterface
 
     public function select(array $fields): self;
 
-    public function setTable(string $table): self;
+    public function fromTable(string $table): self;
 
     public function where(array $whereArray): self;
     
