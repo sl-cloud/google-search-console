@@ -2,7 +2,6 @@
 namespace CooderSteve\Classes;
 
 use CooderSteve\Interfaces\DBConnectionInterface;
-use Exception;
 
 class DBFactory
 {
