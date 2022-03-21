@@ -1,0 +1,10 @@
+{
+	"autoload" : {
+		"psr-4" : {
+			"CooderSteve\\" : "src/"
+		}
+	},
+	"require": {
+		"rakibtg/sleekdb": "^2.13"
+	}
+}
