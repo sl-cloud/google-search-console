@@ -13,6 +13,7 @@ class MySQLConnection implements DBConnectionInterface
     public function fromTable(string $table): self
     {
         $this->useTable = $table;
+        return $this;
     }
     
     public function select(array $fields): self
