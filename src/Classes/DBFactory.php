@@ -8,8 +8,8 @@ class DBFactory
     public static function getConnection(string $dbType = NULL): DBConnectionInterface
     {
         switch ($dbType) {
-            case "mysql":
-                return  new MySQLConnection();
+            case "mongo":
+                return  new MongoDBConnection();
                 break;
             default:
                 return  new SleekDbConnection();
