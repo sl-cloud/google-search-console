@@ -1,12 +1,19 @@
 <?php
 namespace CooderSteve\Classes;
 
-use CooderSteve\Classes\DBFactory as DBFactory;
+use CooderSteve\Classes\BaseClass;
+use CooderSteve\Models\ModelConfigurations;
 
-class Main
+class Main extends BaseClass
 {
-    protected $Db;
-    public function __construct() {
-        $this->Db = namespace\DBFactory::getConnection();
+
+    protected $_db;
+
+    public function __construct()
+    {
+        $this->_db = DBFactory::getConnection();
+
+        // Load Models
+        $this->ModelConfigurations = new ModelConfigurations($this->_db);
     }
 }

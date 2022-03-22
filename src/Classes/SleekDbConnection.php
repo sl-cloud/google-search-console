@@ -9,7 +9,7 @@ use CooderSteve\Interfaces\DBConnectionInterface;
 use CooderSteve\Classes\AbstractDBConnection;
 use SleekDB\Store;
 
-class SleekDbConnection extends AbstractDBConnection implements DBConnectionInterface
+class SleekDbConnection implements DBConnectionInterface
 {
 
     protected $dataDirectory;

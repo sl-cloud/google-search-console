@@ -1,5 +1,5 @@
 {
-	"name" : "CooderSteve/google-search-console",
+	"name" : "coodersteve/google-search-console",
 	"description" : "Just a sample project fetching data from Google Search Console and storing it locally in a NoSQL database",
 	"minimum-stability" : "dev",
 	"type" : "module",
