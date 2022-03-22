@@ -14,11 +14,11 @@ ini_set("error_log", __DIR__ . "/php-error.log");
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use CooderSteve\Classes\Main;
+use CooderSteve\Models\ModelMain;
 use Exception;
 
 try {
-    $Main = print_r((new Main())->getDbTable()->fetchAll());
+    $Main = print_r((new ModelMain())->getDbTable()->fetchAll());
     
 } catch (TypeError $e) {
     echo $e->getMessage();
