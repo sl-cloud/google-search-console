@@ -3,7 +3,7 @@ namespace CooderSteve\Classes;
 
 use CooderSteve\Interfaces\DBConnectionInterface;
 
-class MongoDBConnection implements DBConnectionInterface
+class MongoDBConnection extends BaseDbConnection implements DBConnectionInterface
 {
 
     public function connect(): self
