@@ -9,12 +9,10 @@ use CooderSteve\Interfaces\DBConnectionInterface;
 use CooderSteve\Classes\AbstractDBConnection;
 use SleekDB\Store;
 
-class SleekDbConnection implements DBConnectionInterface
+class SleekDbConnection extends BaseDbConnection implements DBConnectionInterface
 {
 
     protected $dataDirectory;
-
-    protected $dataStorage;
 
     public function __construct()
     {
@@ -24,7 +22,7 @@ class SleekDbConnection implements DBConnectionInterface
 
     public function connect(): self
     {
-        $this->dataStorage = new \SleekDB\Store($this->useTable, $this->dataDirectory);
+        $this->_dataStorage = new \SleekDB\Store($this->useTable, $this->dataDirectory);
 
         // We will insert some data just to make sure the database is working correctly
         $data = [
@@ -32,10 +30,11 @@ class SleekDbConnection implements DBConnectionInterface
             "name" => "data_directory",
             "value" => $this->dataDirectory
         ];
-        $this->dataStorage->updateOrInsert($data);
+        $this->_dataStorage->updateOrInsert($data);
         return $this;
     }
 
+    
     public function fromTable(string $table): self
     {
         $this->useTable = $table;

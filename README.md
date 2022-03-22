@@ -7,3 +7,6 @@ DbTables
 
 0.0.3
 Simple Models
+
+0.0.4
+DbTables working

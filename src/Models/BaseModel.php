@@ -3,41 +3,31 @@ namespace CooderSteve\Models;
 
 use CooderSteve\Interfaces\DBConnectionInterface;
 use CooderSteve\Classes\Db\DbTablesInterface;
+use CooderSteve\Classes\DBFactory;
 use Exception;
 
-class BaseModel implements DbTablesInterface
+class BaseModel
 {
 
-    protected $_table;
+    protected $_tableName;
 
     protected $_dB;
 
-    public function __construct(DBConnectionInterface $DB)
+    protected $_dbTable;
+
+    final public function __construct(string $dbType = NULL)
     {
-        $this->_db = $DB;
-        if(is_null($this->_table)) {
+        if (is_null($this->_tableName)) {
             $thisClassName = get_class($this);
-            throw new exception("Need to declare a table for Model {$thisClassName} before calling parent __construct.");
+            throw new exception("Need to declare a table for Model {$thisClassName}");
         }
-    }
-
-    public function insert(array $data): bool
-    {
-        return true;
-    }
-
-    public function update(array $data, int $id): bool
-    {
-        return true;
-    }
-
-    public function delete(int $id): bool
-    {
-        return true;
-    }
-    
-    public function fetchAll(): array
-    {
         
+        $this->_db = DBFactory::getConnection($dbType)->connect();
+        $this->_dbTable = DBFactory::getDbTable($dbType);
+    }
+
+    public function getDbTable()
+    {
+        return $this->_dbTable;
     }
 }

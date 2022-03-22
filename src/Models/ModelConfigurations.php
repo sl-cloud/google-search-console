@@ -6,13 +6,6 @@ use CooderSteve\Interfaces\DBConnectionInterface;
 
 class ModelConfigurations extends BaseModel
 {
+    protected $_tableName = 'configurations';
 
-    public function __construct(DBConnectionInterface $DB)
-    {
-        
-        $this->_table = 'configurations';
-        parent::__construct($DB);
-        
-        echo "Model Loaded";
-    }
 }
