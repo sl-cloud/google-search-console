@@ -11,7 +11,7 @@ class BaseModel
 
     protected $_tableName;
 
-    protected $_dB;
+    protected $_db;
 
     protected $_dbTable;
 
